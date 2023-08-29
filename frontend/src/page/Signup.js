@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import signup from "../assest/login-animation.gif";
 import { BiShow, BiHide } from "react-icons/bi";
 import { Link, useNavigate } from "react-router-dom";
-import { ImagetoBase64 } from "../utility/handleUploadProfileImage";
+import { ImagetoBase64 } from "../utility/ImagetoBase64";
 import { toast } from 'react-hot-toast'
 
 const Signup = () => {
