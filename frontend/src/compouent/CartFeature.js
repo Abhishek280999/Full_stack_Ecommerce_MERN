@@ -1,8 +1,24 @@
 import React from 'react'
+import { useDispatch } from 'react-redux';
 import { Link } from "react-router-dom";
+import { addCartItem  } from '../redux/productSlice';
+import { toast } from 'react-hot-toast';
 
 const CartFeature = ({ image, name, price, category, loading, id }) => {
  
+  const dispatch = useDispatch()
+
+  const handleAddCartProduct = (e) => {
+    dispatch(addCartItem(
+      {
+      _id : id,
+      name : name,
+      price : price,
+      category : category,
+      image : image
+    }))
+    toast("Item is Add to Cart  ")
+  };
   
   return (
     <div className="w-full min-w-[200px] max-w-[200px] bg-white hover:shadow-lg drop-shadow-lg py-5 px-4 cursor-pointer flex flex-col ">
@@ -25,8 +41,8 @@ const CartFeature = ({ image, name, price, category, loading, id }) => {
           </p>
         </Link>
         <button
-          className="bg-yellow-500 py-1 mt-2 rounded hover:bg-yellow-600 w-full"
-        >
+          className="bg-yellow-500 py-1 mt-2 rounded hover:bg-yellow-600 w-full" onClick={handleAddCartProduct}
+        > 
           Add Cart
         </button>
       </>
