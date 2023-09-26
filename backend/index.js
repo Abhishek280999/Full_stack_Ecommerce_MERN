@@ -61,22 +61,10 @@ app.post('/signup', async (req, res) => {
             res.send({ message: "Successfully sign up", alert: true });
         }
     } catch (error) {
-        console.error(error);
+        // console.error(error);
         res.status(500).send({ message: "An error occurred" });
     }
-    // userModel.findOne({email : email} , (err , result)=>{
-    //     console.log(result)
-    //     console.log(err)
-    //     if(result){
-    //         res.send({message : " email id is already done"})
-    //     }
-    //     else{
-    //        const data = userModel(req.body) 
-    //        const save = data.save()
-    //        res.send({message : "Successfully sign up"})
-    //     }
-    // })
-
+   
 })
 
 
@@ -143,13 +131,13 @@ app.get("/product", async (req, res) => {
 
 // Payment getway
 
-console.log(process.env.STRIPE_SECRET_KEY)
+// console.log(process.env.STRIPE_SECRET_KEY)
 
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY)
 
 app.post('/create-checkout-session', async (req, res) => {
-    console.log(req.body)
+    // console.log(req.body)
     try {
         const params = {
             submit_type: 'pay',
