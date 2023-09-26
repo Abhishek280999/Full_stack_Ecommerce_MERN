@@ -14,8 +14,17 @@ export const productSlice = createSlice({
       state.productList = [...action.payload];
     },
     addCartItem: (state, action) => {
-      const total = action.payload.price;
-      state.cartItem = [...state.cartItem, { ...action.payload, qty: 1, total: total }];
+      const check = state.cartItem.some((el) => el._id === action.payload._id);
+      if (check) {
+        toast("Already Item in Cart");
+      } else {
+        toast("Item Add successfully");
+        const total = action.payload.price;
+        state.cartItem = [
+          ...state.cartItem,
+          { ...action.payload, qty: 1, total: total },
+        ];
+      }
     },
     deleteCartItem: (state, action) => {
       toast("One Item Deleted");
