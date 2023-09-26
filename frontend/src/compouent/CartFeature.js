@@ -17,7 +17,7 @@ const CartFeature = ({ image, name, price, category, loading, id }) => {
       category : category,
       image : image
     }))
-    toast("Item is Add to Cart  ")
+    // toast("Item is Add to Cart  ")
   };
   
   return (
