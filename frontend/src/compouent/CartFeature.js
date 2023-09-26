@@ -1,7 +1,7 @@
 import React from 'react'
 import { useDispatch } from 'react-redux';
 import { Link } from "react-router-dom";
-import { addCartItem  } from '../redux/productSlice';
+import { addCartItem , increaseQty  } from '../redux/productSlice';
 import { toast } from 'react-hot-toast';
 
 const CartFeature = ({ image, name, price, category, loading, id }) => {
