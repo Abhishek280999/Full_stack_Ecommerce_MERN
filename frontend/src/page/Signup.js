@@ -17,7 +17,7 @@ const Signup = () => {
     confirmPassword: "",
     image: "",
   });
-  console.log(data);
+  // console.log(data);
   const handleShowPassword = () => {
     setShowPassword((preve) => !preve);
   };
@@ -46,7 +46,7 @@ const Signup = () => {
     })
 
   }
-  console.log(process.env.REACT_APP_SERVER_DOMIN)
+  // console.log(process.env.REACT_APP_SERVER_DOMIN)
   const handleSubmit = async (e) => {
     e.preventDefault();
     const { firstName, email, password, confirmPassword } = data;

@@ -8,8 +8,8 @@ import { toast } from 'react-hot-toast';
 
 const Cart = () => {
   const productCartItem = useSelector((state) => state.product.cartItem);
-  console.log(productCartItem)
 
+ 
   const user = useSelector(state => state.user)
   const navigate = useNavigate()
 
